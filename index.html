@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>roiroiのゲームまとめ</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-  
-  <!-- ダークモード用のスタイル -->
-  <style>
-    /* Darkmode時にヒーローセクションのテキスト色を白に変更 */
-    .darkmode--activated .hero.is-dark .title,
-    .darkmode--activated .hero.is-dark .subtitle {
-      color: #ffffff !important;
-    }
-  </style>
 </head>
   <body>
   
@@ -81,13 +72,36 @@
 
     <!-- 暗モードウィジェット -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
-      function addDarkmodeWidget() {
-        new Darkmode().showWidget();
+  <script>
+    // Darkmodeのオプションを設定
+    const options = {
+      bottom: '64px', // ダークモードボタンの位置
+      right: '32px',
+      left: 'unset',
+      time: '0.5s', // トランジション時間
+      backgroundColor: '#232424', // ダークモード時の背景色
+      mixColor: '#ffffff', // 明るい色
+      buttonColorDark: '#100f2c',
+      buttonColorLight: '#ffffff',
+      saveInCookies: true,
+      label: '🌓',
+      autoMatchOsTheme: true,
+      // ダークモード時のカスタムスタイルを指定
+      onToggle: function(isDarkMode) {
+        if (isDarkMode) {
+          document.querySelector('.hero.is-dark .title').style.color = '#ffffff';
+          document.querySelector('.hero.is-dark .subtitle').style.color = '#ffffff';
+        } else {
+          document.querySelector('.hero.is-dark .title').style.color = '';
+          document.querySelector('.hero.is-dark .subtitle').style.color = '';
+        }
       }
-      window.addEventListener('load', addDarkmodeWidget);
-    </script>
-    
+    };
+
+    // Darkmodeのウィジェットを表示
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+  </script>
   </body>
 </html>
 
