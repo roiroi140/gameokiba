@@ -11,6 +11,11 @@
         background-color: #232424; /* ダークモードのヒーローセクション背景色 */
       }
 
+      /* ボックスのスタイル */
+      .hero .box {
+        background-color: transparent; /* ボックスの背景を透明に設定 */
+      }
+
       /* ヒーローセクションの文字色 */
       .hero .title,
       .hero .subtitle {
@@ -51,8 +56,10 @@
     <section class="hero is-dark">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 class="title is-size-1">僕のゲーム置き場</h1>
-          <p class="subtitle is-size-3">僕が作ったゲーム置き場です。基本unity作です。</p>
+          <div class="box"> <!-- ボックスで囲む -->
+            <h1 class="title is-size-1">僕のゲーム置き場</h1>
+            <p class="subtitle is-size-3">僕が作ったゲーム置き場です。基本unity作です。</p>
+          </div>
         </div>
       </div>
     </section>
