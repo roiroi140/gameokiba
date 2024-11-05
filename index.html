@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>roiroiのゲームまとめ</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>roiroiのゲームまとめ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+      /* ライトモード用の文字色 */
+      .dark-text {
+        color: #000000;
+      }
+      /* ダークモード時の文字色 */
+      .darkmode--activated .dark-text {
+        color: #ffffff !important;
+      }
+    </style>
+  </head>
   <body>
-  
+
     <!-- ナビゲーションバー -->
     <nav class="navbar is-primary">
       <div class="navbar-menu is-centered">
@@ -22,8 +32,8 @@
     <section class="hero is-dark">
       <div class="hero-body">
         <div class="container has-text-centered">
-          <h1 class="title is-size-1 has-text-white">僕のゲーム置き場</h1>
-          <p class="subtitle is-size-3 has-text-white">僕が作ったゲーム置き場です。基本unity作です。</p>
+          <h1 class="title is-size-1 dark-text">僕のゲーム置き場</h1>
+          <p class="subtitle is-size-3 dark-text">僕が作ったゲーム置き場です。基本unity作です。</p>
         </div>
       </div>
     </section>
@@ -35,31 +45,31 @@
         <!-- かきげーむ -->
         <div class="box">
           <a href="https://unityroom.com/games/kakigame" class="button is-fullwidth is-primary">かきげーむ</a>
-          <p class="is-size-5 has-text-white">概要<br>昔々作ったやつ<br>一応unityroomでは限定公開</p>
+          <p class="is-size-5 dark-text">概要<br>昔々作ったやつ<br>一応unityroomでは限定公開</p>
         </div>
 
         <!-- スイカゲーム...？ -->
         <div class="box">
           <a href="https://unityroom.com/games/suika-pakuri" class="button is-fullwidth is-primary">スイカゲーム...?</a>
-          <p class="is-size-5 has-text-white">概要<br>昔々作ったやつ<br>一応unityroomでは限定公開</p>
+          <p class="is-size-5 dark-text">概要<br>昔々作ったやつ<br>一応unityroomでは限定公開</p>
         </div>
 
         <!-- メダルゲーム -->
         <div class="box">
           <a href="https://unityroom.com/games/medaru-otosi" class="button is-fullwidth is-primary">メダルゲーム</a>
-          <p class="is-size-5 has-text-white">概要<br>メダルゲーム<br>実はメダルゲームやったことない</p>
+          <p class="is-size-5 dark-text">概要<br>メダルゲーム<br>実はメダルゲームやったことない</p>
         </div>
 
         <!-- 脱出ゲーム -->
         <div class="box">
           <a href="https://unityroom.com/games/dasshutugame" class="button is-fullwidth is-primary">脱出ゲーム</a>
-          <p class="is-size-5 has-text-white">概要<br>脱出ゲーム<br>とあるYouTuberを参考にしてる</p>
+          <p class="is-size-5 dark-text">概要<br>脱出ゲーム<br>とあるYouTuberを参考にしてる</p>
         </div>
 
         <!-- アイワナ -->
         <div class="box">
           <a href="test.html" class="button is-fullwidth is-primary">アイワナ</a>
-          <p class="is-size-5 has-text-white">概要<br>体験版みたいな<br>いつかコミケとかで頒布したい</p>
+          <p class="is-size-5 dark-text">概要<br>体験版みたいな<br>いつかコミケとかで頒布したい</p>
         </div>
 
         <!-- Coming Soon -->
@@ -70,38 +80,33 @@
       </div>
     </section>
 
-    <!-- 暗モードウィジェット -->
+    <!-- ダークモードの切り替え用スクリプト -->
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-  <script>
-    // Darkmodeのオプションを設定
-    const options = {
-      bottom: '64px', // ダークモードボタンの位置
-      right: '32px',
-      left: 'unset',
-      time: '0.5s', // トランジション時間
-      backgroundColor: '#232424', // ダークモード時の背景色
-      mixColor: '#ffffff', // 明るい色
-      buttonColorDark: '#100f2c',
-      buttonColorLight: '#ffffff',
-      saveInCookies: true,
-      label: '🌓',
-      autoMatchOsTheme: true,
-      // ダークモード時のカスタムスタイルを指定
-      onToggle: function(isDarkMode) {
-        if (isDarkMode) {
-          document.querySelector('.hero.is-dark .title').style.color = '#ffffff';
-          document.querySelector('.hero.is-dark .subtitle').style.color = '#ffffff';
-        } else {
-          document.querySelector('.hero.is-dark .title').style.color = '';
-          document.querySelector('.hero.is-dark .subtitle').style.color = '';
+    <script>
+      // Darkmodeのオプションを設定
+      const options = {
+        bottom: '64px', // ダークモードボタンの位置
+        right: '32px',
+        left: 'unset',
+        time: '0.5s', // トランジション時間
+        backgroundColor: '#232424', // ダークモード時の背景色
+        mixColor: '#ffffff', // 明るい色
+        buttonColorDark: '#100f2c',
+        buttonColorLight: '#ffffff',
+        saveInCookies: true,
+        label: '🌓',
+        autoMatchOsTheme: true,
+        onToggle: function(isDarkMode) {
+          const elements = document.querySelectorAll('.dark-text');
+          elements.forEach(el => {
+            el.classList.toggle('darkmode--activated', isDarkMode);
+          });
         }
-      }
-    };
+      };
 
-    // Darkmodeのウィジェットを表示
-    const darkmode = new Darkmode(options);
-    darkmode.showWidget();
-  </script>
+      // Darkmodeのウィジェットを表示
+      const darkmode = new Darkmode(options);
+      darkmode.showWidget();
+    </script>
   </body>
 </html>
-
