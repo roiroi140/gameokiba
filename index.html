@@ -18,14 +18,20 @@
         color: #ffffff !important; /* ダークモードの文字色 */
       }
 
-      /* ヒーローセクションのスタイル */
+      /* ヒーローセクションのデフォルトスタイル */
       .hero.is-dark {
         background-color: #232424; /* ダークモードのヒーローセクション背景色 */
       }
 
       /* ヒーローセクションの文字色 */
-      .hero.is-dark .title,
-      .hero.is-dark .subtitle {
+      .hero .title,
+      .hero .subtitle {
+        color: #000000; /* ライトモードの文字色 */
+      }
+
+      /* ダークモード時のヒーローセクションの文字色 */
+      .darkmode--activated .hero .title,
+      .darkmode--activated .hero .subtitle {
         color: #ffffff; /* ダークモードの文字色 */
       }
     </style>
