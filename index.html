@@ -6,38 +6,27 @@
     <title>roiroiのゲームまとめ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <style>
-      /* ヒーローセクションのデフォルトスタイル */
+      /* ヒーローセクションのスタイル */
       .hero.is-dark {
         background-color: #232424; /* ダークモードのヒーローセクション背景色 */
       }
 
       /* ボックスのスタイル */
       .hero .box {
-        background-color: transparent; /* ボックスの背景を透明に設定 */
+        background-color: #000000; /* ボックスの背景色を黒に設定 */
+        color: #ffffff; /* ボックス内の文字色を白に設定 */
       }
 
       /* ヒーローセクションの文字色 */
       .hero .title,
       .hero .subtitle {
-        color: #000000; /* ライトモードの文字色 */
+        color: #ffffff; /* 常に白色の文字 */
       }
 
-      /* ダークモード時のヒーローセクションの文字色 */
-      .darkmode--activated .hero .title,
-      .darkmode--activated .hero .subtitle {
-        color: #ffffff; /* ダークモードの文字色 */
-      }
-
-      /* ボックスのデフォルトスタイル */
+      /* ゲームリンクセクションのボックスのスタイル */
       .box {
-        background-color: #ffffff; /* ライトモードの背景色 */
-        color: #000000; /* ライトモードの文字色 */
-      }
-
-      /* ダークモード時のボックスのスタイル */
-      .darkmode--activated .box {
-        background-color: #232424; /* ダークモードの背景色 */
-        color: #ffffff !important; /* ダークモードの文字色 */
+        background-color: #000000; /* ボックスの背景色を黒に設定 */
+        color: #ffffff; /* ボックス内の文字色を白に設定 */
       }
     </style>
   </head>
@@ -121,14 +110,7 @@
         buttonColorLight: '#ffffff',
         saveInCookies: true,
         label: '🌓',
-        autoMatchOsTheme: true,
-        onToggle: function(isDarkMode) {
-          if (isDarkMode) {
-            document.body.classList.add('darkmode--activated');
-          } else {
-            document.body.classList.remove('darkmode--activated');
-          }
-        }
+        autoMatchOsTheme: true
       };
 
       // Darkmodeのウィジェットを表示
