@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://roiroi140.github.io/gameokiba</loc>
-    <lastmod>2024-12-24</lastmod>
+    <lastmod>2024-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
       <loc>https://username.github.io/index.html</loc>
-      <lastmod>2024-12-24</lastmod>
+      <lastmod>2024-12-26</lastmod>
       <priority>0.8</priority>
   </url>
   <url>
-      <loc>https://username.github.io/indax.html</loc>
-      <lastmod>2024-12-24</lastmod>
+      <loc>https://username.github.io/test.html</loc>
+      <lastmod>2024-12-26</lastmod>
       <priority>0.5</priority>
   </url>
 </urlset>
