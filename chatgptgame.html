@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モグラたたきゲーム</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .hole {
+            width: 100px;
+            height: 100px;
+            background-color: #8B4513;
+            border-radius: 50%;
+            position: relative;
+        }
+        .mole {
+            width: 80px;
+            height: 80px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>モグラたたきゲーム</h1>
+    <p>スコア: <span id="score">0</span></p>
+    <div class="game-container" id="game-container"></div>
+    <script>
+        const gameContainer = document.getElementById("game-container");
+        const scoreDisplay = document.getElementById("score");
+        let score = 0;
+        
+        function createHole() {
+            const hole = document.createElement("div");
+            hole.classList.add("hole");
+            const mole = document.createElement("div");
+            mole.classList.add("mole");
+            hole.appendChild(mole);
+            gameContainer.appendChild(hole);
+            mole.addEventListener("click", () => {
+                if (mole.style.display === "block") {
+                    score++;
+                    scoreDisplay.textContent = score;
+                    mole.style.display = "none";
+                }
+            });
+            return mole;
+        }
+        
+        const moles = Array.from({ length: 9 }, createHole);
+        
+        function showMole() {
+            const randomMole = moles[Math.floor(Math.random() * moles.length)];
+            randomMole.style.display = "block";
+            setTimeout(() => {
+                randomMole.style.display = "none";
+            }, 800);
+        }
+        
+        setInterval(showMole, 1000);
+    </script>
+</body>
+</html>
